@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Entornos
+.env
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Otros
+.ipynb_checkpoints/
