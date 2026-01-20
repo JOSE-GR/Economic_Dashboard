@@ -491,6 +491,14 @@ def layout_markets():
 
     # Columna izquierda: índices y cripto
     with col1:
+        st.subheader("Magníficas 7")
+        st.caption("Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia y Tesla.")
+        try:
+            mag7 = markets.get_mag7_table()
+            st.dataframe(mag7, width="stretch")
+        except Exception as e:
+            st.error(f"Error al cargar Magníficas 7: {e}")
+
         st.subheader("Índices")
         st.caption("Dow Jones, S&P 500, Nasdaq.")
         try:
@@ -563,6 +571,7 @@ def layout_news():
     with col2:
         with st.container(border=True):
             st.markdown("<div class='source-title'> Bloomberg Línea</div>", unsafe_allow_html=True)
+            st.markdown("- [México](https://www.bloomberglinea.com/latinoamerica/mexico/)")
             st.markdown("- [Mercados](https://www.bloomberglinea.com/mercados/)")
             st.markdown("- [Tecnología](https://www.bloomberglinea.com/tecnologia/)")
             st.markdown("- [Latinoamérica](https://www.bloomberglinea.com/latinoamerica/)")
@@ -586,6 +595,18 @@ def layout_news():
             st.markdown("<div class='source-title'> Yahoo Finance</div>", unsafe_allow_html=True)
             st.markdown("- [Economy](https://finance.yahoo.com/topic/economic-news/)")
             st.markdown("- [Technology](https://finance.yahoo.com/tech/)")
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+# --- FILA 3: ING THINK (RESEARCH) ---
+col5, col6 = st.columns(2)
+
+with col5:
+    with st.container(border=True):
+        st.markdown("<div class='source-title'> ING Think)</div>", unsafe_allow_html=True)
+        st.markdown("- [Commodities](https://think.ing.com/market/commodities/)")
+        st.markdown("- [Commodities, Food & Agri](https://think.ing.com/sector/commodities-food-agri/)")
+        st.markdown("- [Energy](https://think.ing.com/sector/energy/)")
 
     # --- PIE DE PÁGINA O HERRAMIENTAS EXTRAS ---
     st.divider()
