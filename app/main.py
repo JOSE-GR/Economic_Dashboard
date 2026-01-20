@@ -495,7 +495,7 @@ def layout_markets():
         st.caption("Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia y Tesla.")
         try:
             mag7 = markets.get_mag7_table()
-            st.dataframe(mag7, width="stretch")
+            st.dataframe(mag7, use_container_width=True)
         except Exception as e:
             st.error(f"Error al cargar Magníficas 7: {e}")
 
@@ -598,20 +598,21 @@ def layout_news():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-# --- FILA 3: ING THINK (RESEARCH) ---
-col5, col6 = st.columns(2)
+    # --- FILA 3: ING THINK (RESEARCH) ---
+    col5, col6 = st.columns(2)
 
-with col5:
-    with st.container(border=True):
-        st.markdown("<div class='source-title'> ING Think)</div>", unsafe_allow_html=True)
-        st.markdown("- [Commodities](https://think.ing.com/market/commodities/)")
-        st.markdown("- [Commodities, Food & Agri](https://think.ing.com/sector/commodities-food-agri/)")
-        st.markdown("- [Energy](https://think.ing.com/sector/energy/)")
+    with col5:
+        with st.container(border=True):
+            st.markdown("<div class='source-title'> ING Think</div>", unsafe_allow_html=True)
+            st.markdown("- [Commodities](https://think.ing.com/market/commodities/)")
+            st.markdown("- [Commodities, Food & Agri](https://think.ing.com/sector/commodities-food-agri/)")
+            st.markdown("- [Energy](https://think.ing.com/sector/energy/)")
 
     # --- PIE DE PÁGINA O HERRAMIENTAS EXTRAS ---
     st.divider()
     st.caption("Nota: Los enlaces se abren en una nueva pestaña del navegador.")
         
+
 def main():
     import streamlit as st
 

@@ -7,6 +7,8 @@ INDEX_TICKERS = ["^DJI", "^GSPC", "^IXIC", "^RUT"]    # Dow, S&P 500, Nasdaq, Ru
 CRYPTO_TICKERS = ["BTC-USD", "ETH-USD", "USDT-USD"]
 COMMODITY_TICKERS = ["GC=F", "SI=F", "HG=F", "CL=F", "BZ=F", "NG=F"]
 PRIVATE_COMPANY_TICKERS = ["SPAX.PVT", "OPAI.PVT", "ANTH.PVT", "XAAI.PVT", "DATB.PVT"]
+MAG7_TICKERS = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA"]
+
 
 
 TICKER_LABELS = {
@@ -28,6 +30,13 @@ TICKER_LABELS = {
     "ANTH.PVT": "Anthropic",
     "XAAI.PVT": "xAI",
     "DATB.PVT": "Databricks",
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "GOOGL": "Alphabet",
+    "AMZN": "Amazon",
+    "NVDA": "Nvidia",
+    "META": "Meta",
+    "TSLA": "Tesla",
 }
 
 def get_private_companies_table():
@@ -181,3 +190,7 @@ def get_crypto_table():
 
 def get_commodities_table():
     return _latest_price(COMMODITY_TICKERS)
+
+def get_mag7_table():
+    return _latest_price(MAG7_TICKERS)
+
