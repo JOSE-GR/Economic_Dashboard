@@ -146,7 +146,7 @@ streamlit run app/main.py
 
 ---
 
-## Autor 👤
+## Autor 👾
 
 **JOSE-GR** — [@JOSE-GR](https://github.com/JOSE-GR)
 
